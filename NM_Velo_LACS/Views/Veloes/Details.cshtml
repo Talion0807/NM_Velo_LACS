@@ -1,0 +1,84 @@
+﻿@model NM_Velo_LACS.Models.Velo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Velo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pouces)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pouces)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Annee_achat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Annee_achat.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Couleur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Couleur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix_location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix_location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix_vente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix_vente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDVelo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

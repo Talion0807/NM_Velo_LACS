@@ -1,0 +1,55 @@
+﻿@model IEnumerable<NM_Velo_LACS.Models.Client>
+
+@{
+    ViewBag.Title = "Liste des clients";
+}
+
+<h1>Liste des clients</h1>
+<body>
+    
+
+    <p>
+        @Html.ActionLink("Ajouter un nouveau client", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GSM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GSM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Editer", "Edit", new { id = item.IDClient }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IDClient }) |
+                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IDClient })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

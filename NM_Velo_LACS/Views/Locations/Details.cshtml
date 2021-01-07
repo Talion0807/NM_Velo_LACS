@@ -1,0 +1,66 @@
+﻿@model NM_Velo_LACS.Models.Location
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Location</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Velo.Marque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Velo.Marque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Debut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Debut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix_location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix_location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caution)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDLocation }) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>

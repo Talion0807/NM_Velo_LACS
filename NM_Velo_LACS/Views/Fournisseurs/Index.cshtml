@@ -1,0 +1,60 @@
+﻿@model IEnumerable<NM_Velo_LACS.Models.Fournisseur>
+
+@{
+    ViewBag.Title = "Liste des fournisseurs";
+}
+
+<h1>Liste des fournisseurs</h1>
+<body>
+    
+
+<p>
+    @Html.ActionLink("Ajouter un nouveau fournisseur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_Fournisseur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GSM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code_Postal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_Fournisseur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GSM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresse_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code_Postal)
+        </td>
+        <td>
+            @Html.ActionLink("Editer", "Edit", new { id=item.IDFournisseur }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDFournisseur }) |
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.IDFournisseur })
+        </td>
+    </tr>
+}
+
+</table>
+    </body>

@@ -1,0 +1,64 @@
+﻿@model NM_Velo_LACS.Models.Fournisseur
+
+@{
+    ViewBag.Title = "Supprimer";
+}
+
+<h1>Supprimer</h1>
+
+<h3>Etes-vous sûr de vouloir supprimer ?</h3>
+<div>
+    <h4>Fournisseur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Fournisseur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Fournisseur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GSM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GSM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code_Postal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code_Postal)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-default" /> |
+            @Html.ActionLink("Retour à la liste", "Index")
+        </div>
+    }
+</div>

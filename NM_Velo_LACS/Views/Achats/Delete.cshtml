@@ -1,0 +1,56 @@
+﻿@model NM_Velo_LACS.Models.Achat
+
+@{
+    ViewBag.Title = "Supprimer";
+}
+
+<h1>Supprimer</h1>
+
+<h3>Etes-vous sûr de vouloir supprimer ?</h3>
+<div>
+    <h4>Achat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fournisseur.Nom_Fournisseur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fournisseur.Nom_Fournisseur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Velo.Marque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Velo.Marque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Achat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Achat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-default" /> |
+            @Html.ActionLink("Retour à la liste", "Index")
+        </div>
+    }
+</div>

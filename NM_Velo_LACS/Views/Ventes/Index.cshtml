@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NM_Velo_LACS.Models.Vente>
+
+@{
+    ViewBag.Title = "Liste des ventes";
+}
+
+<h1>Liste des ventes</h1>
+<body>
+   
+    <p>
+        @Html.ActionLink("Ajouter une nouvelle vente", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Velo.Marque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_vente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prix_vente)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Velo.Marque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_vente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prix_vente)
+                </td>
+                <td>
+                    @Html.ActionLink("Editer", "Edit", new { id = item.IDVente }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IDVente }) |
+                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IDVente })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

@@ -1,0 +1,66 @@
+﻿    @model IEnumerable<NM_Velo_LACS.Models.VeloVenduAnnee>
+    @{
+        ViewBag.Title = "VeloVenduCetteAnnee";
+    }
+
+    <h1>Velo VenduCette Annee</h1>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.venteDetails.IDVente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veloDetails.IDVelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veloDetails.Marque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veloDetails.Annee_achat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veloDetails.Prix_vente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veloDetails.NomImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.venteDetails.Date_vente)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.venteDetails.IDVente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veloDetails.IDVelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veloDetails.Marque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veloDetails.Annee_achat.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veloDetails.Prix_vente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veloDetails.NomImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.venteDetails.Date_vente.Year)
+        </td>
+
+        <td>
+            <img src="~/img/@Html.DisplayFor(modelItem => item.veloDetails.NomImage)" height="200" width="200" />
+        </td>
+    </tr>
+
+        }
+        </table>

@@ -1,0 +1,58 @@
+﻿@model NM_Velo_LACS.Models.Fournisseur
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Fournisseur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Fournisseur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Fournisseur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GSM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GSM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code_Postal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code_Postal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDFournisseur }) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>

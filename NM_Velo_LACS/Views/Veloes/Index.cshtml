@@ -1,0 +1,85 @@
+﻿@model IEnumerable<NM_Velo_LACS.Models.Velo>
+
+@{
+    ViewBag.Title = "Stock de vélos";
+}
+
+<h2>Stock de vélos</h2>
+
+<p>
+    @Html.ActionLink("Ajouter un vélo", "Create")
+</p>
+<p>
+    @Html.ActionLink("Velo vendu cette annee", "VeloVenduCetteAnnee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Marque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pouces)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Annee_achat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Couleur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix_location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix_vente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Caution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomImage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pouces)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Annee_achat.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Couleur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix_location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix_vente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Caution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomImage)
+        </td>
+        <td>
+            @Html.ActionLink("Editer", "Edit", new { id = item.IDVelo }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IDVelo }) |
+            @Html.ActionLink("Supprimer", "Delete", new { id = item.IDVelo }) 
+            
+        </td>
+        <td>
+            <img src="~/img/@Html.DisplayFor(modelItem => item.NomImage)" height="200" width="200"/>
+        </td>
+    </tr>
+   
+}
+
+</table>
+
+

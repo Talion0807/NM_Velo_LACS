@@ -1,0 +1,66 @@
+﻿@model IEnumerable<NM_Velo_LACS.Models.Location>
+
+@{
+    ViewBag.Title = "Liste des locations";
+}
+
+<h1>Liste des locations</h1>
+<body>
+    
+
+<p>
+    @Html.ActionLink("Ajouter une nouvelle location", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Velo.Marque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Debut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Fin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix_location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Caution)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Velo.Marque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Debut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Fin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix_location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Caution)
+        </td>
+        <td>
+            @Html.ActionLink("Editer", "Edit", new { id=item.IDLocation }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDLocation }) |
+            @Html.ActionLink("Supprimer", "Delete", new { id=item.IDLocation })
+        </td>
+    </tr>
+}
+
+</table>
+</body>

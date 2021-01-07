@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+
+
+
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-light bg-dark ">
+        <ul class="nav navbar-nav narvbar">
+
+
+
+            <li class="nav-item text-center "><a class="nav-link text-light text" href="/Veloes">Velo</a></li>
+            <li class="nav-item"><a class="nav-link text-light " href="/Achats">Achat</a></li>
+            <li class="nav-item"><a class="nav-link text-light " href="/Clients">Client</a></li>
+            <li class="nav-item"><a class="nav-link text-light " href="/Ventes">Vente</a></li>
+            <li class="nav-item"><a class="nav-link text-light " href="/Locations">Location</a></li>
+            <li class="nav-item"><a class="nav-link text-light " href="/Fournisseurs">Fournisseur</a></li>
+
+
+
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+
+
+
+
+    <div class="font-weight-bold  text-uppercase text-center alert-dark"> <h1>MAGASIN DE VELO</h1></div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            @if (Request.IsAuthenticated)
+            {
+                using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                }
+            }
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Mallet Nathan</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+
+</html>
